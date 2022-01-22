@@ -30,3 +30,17 @@ Math.floor(Math.random()*100);
 var porazar = function(num){
     return (Math.random()*num);
 }
+palabras=["tito", "negra", "casa",  "tiempo", "js", "dibujos"];
+function indicealAzar (){
+    //return Math.floor(Math.random()*4)
+    return Math.floor(Math.random()*(palabras.length));
+}
+
+var eligepalabra = function (palabras){
+   return palabras[Math.floor(Math.random()*(palabras.length))];
+}
+
+function indiceyPalabraAlAzar (){
+    //return Math.floor(Math.random()*4)
+    return palabras [Math.floor(Math.random()*(palabras.length))];
+}
