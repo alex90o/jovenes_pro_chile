@@ -8,40 +8,48 @@
 </head>
 <body>
     <h1>El ahorcado</h1>
+    <script>
+        //Crea un arreglo con palabras
+        var palabras = ["canto", "bosque", "internet", "silla", "profesor"];
+        //Elije una palabra al azar
+        var palabraincognita = palabras[Math.floor
+        (Math.random()*palabras.length)];
+        //Configura el arreglo respuesta
+        var letrasincognitas = [];
+        for (var i=0; i<palabraincognita.length; i++){
+            letrasincognitas [i] = "_";
+    
+        }
+    
+        var numerodeletras = palabraincognita.length;
+        //El ciclo del juego
+        while (numerodeletras > 0){
+            //Mostrar el progreso del juego
+            alert(letrasincognitas.join(""));
+            //El jugador ingresa una letra para adivinar
+           var letraIngresada = prompt("Adivina una letra o preciona CAncelar para salir del juego.");
+           if(letraIngresada == null) {
+               break; //Sale del ciclo y del juego
+           } 
+           else if(letraIngresada.length !==1){
+               alert("Por favor ingrese una sola letra.");
+                }else{
+                    //Actualicar el estado del juego con ingreso de la letra del jugador
+                    for(var j = 0; j < palabraincognita.length; j++){
+                        if(palabraincognita[j] === letraIngresada) {
+                            letrasincognitas [j] = letrasincognitas [j] = letraIngresada;
+                            numerodeletras --;
+    
+                        }
+                    }
+            }
+            //Fin del ciclo y del juego
+        }
+        //Muetra la respuesta y felicita al jugador
+        alert(letrasincognitas.join(""));
+        alert("Bien echo ! La respuesta fue " + palabraincognita);
+    </script>
 
 </body>
-<script>
-    //Crea un arreglo con palabras
-    var palabras = ["canto", "bosque", "internet", "silla", "profesor"];
-    var palabraincognita = palabras[Math.floor
-    (Math.random()*palabras.length)];
-    var letrasincognitas = [];
-    for (var i=0; i<palabraincognita.length; i++){
-        letrasincognitas [i] = "_";
 
-    }
-
-    var numerodeletras = palabraincognita.length;
-
-    while (numerodeletras > 0){
-       var letraIngresada = prompt("Adivina una letra o preciona CAncelar para salir del juego.");
-       if(letraIngresada == null) {
-           break;
-       } 
-       else if(letraIngresada.length !==1){
-           alert("Por favor ingrese una sola letra.");
-            }else{
-                //Actualicar el estado del juego con ingreso de la letra del jugador
-                for(var j = 0; j < palabraincognita.length; j++){
-                    if(palabraincognita[j] === letraIngresada) {
-                        letrasincognitas [j] = letrasincognitas [j] = letraIngresada;
-                        numerodeletras --;
-
-                    }
-                }
-        }
-    }
-    alert(letraIngresada.join(""));
-    alert("La respuesta fue " + palabraincognita);
-</script>
 </html>
